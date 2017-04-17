@@ -19,11 +19,6 @@ class ParkingSpot(models.Model):
     # spot_number is the local number associated with a parking spot, not an id
     spot_number = models.PositiveIntegerField()  # no need for negative numbers
 
-    def find_spots_in_radius(self, radius=None):  # radius in meters
-        pass
-        # TODO: if type(radius) == int, return mocked results.
-        #   if type(radius) != int, return all
-
 
 class ParkingSpotReservation(models.Model):
     parking_spot = models.ForeignKey(
