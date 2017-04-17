@@ -1,4 +1,5 @@
-from ridecell.parking_app.models import ParkingSpot, ParkingSpotReservation, User
+from ridecell.parking_app.models import (
+    ParkingSpot, ParkingSpotReservation, User)
 from rest_framework import serializers
 
 
@@ -17,6 +18,8 @@ class ParkingSpotSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ParkingSpotReservationSerializer(serializers.HyperlinkedModelSerializer):
+    user_id = serializers.IntegerField()
+    parking_spot_id = serializers.IntegerField()
 
     class Meta:
         model = ParkingSpotReservation
